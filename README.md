@@ -1,4 +1,4 @@
-# Manage GitHub via Terraform and GitHub Actions Workflow
+# Manage GitHub Repositories via Terraform and GitHub Actions Workflow
 
 This project manages GitHub repositories infrastructure via Terraform for any organization, designed to **streamline contest organization** and **eliminate setup complexity**. 
 
