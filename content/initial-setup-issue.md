@@ -3,6 +3,7 @@
 This issue tracks the initial setup tasks for the {{PROJECT_NAME}} project.
 
 ### Setup Tasks:
+- [ ] Create Project on GitHub
 - [ ] Configure development environment
 - [ ] Set up CI/CD pipeline
 - [ ] Create project documentation
