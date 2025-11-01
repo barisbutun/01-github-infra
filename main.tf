@@ -117,21 +117,21 @@ resource "github_branch_protection" "main" {
 
 resource "github_repository_file" "codeowners" {
   for_each = { for repo in local.all_repos : repo.repo_name => repo }
-  
+
   repository     = github_repository.repo[each.key].name
   branch         = "main"
   file           = ".github/CODEOWNERS"
   content        = "* @${each.value.lead}\n"
   commit_message = "Add CODEOWNERS file"
-  
+
   overwrite_on_create = true
-  
+
   depends_on = [
     github_repository.repo,
     github_team_repository.access,
     github_repository_collaborator.lead
   ]
-  
+
   lifecycle {
     ignore_changes = [content]
   }
@@ -140,43 +140,43 @@ resource "github_repository_file" "codeowners" {
 # Create labels for issues
 resource "github_issue_label" "setup" {
   for_each = { for repo in local.all_repos : repo.repo_name => repo }
-  
-  repository = github_repository.repo[each.key].name
-  name       = "setup"
-  color      = "1d76db"
+
+  repository  = github_repository.repo[each.key].name
+  name        = "setup"
+  color       = "1d76db"
   description = "Initial setup tasks"
-  
+
   depends_on = [github_repository.repo]
 }
 
 resource "github_issue_label" "priority_high" {
   for_each = { for repo in local.all_repos : repo.repo_name => repo }
-  
-  repository = github_repository.repo[each.key].name
-  name       = "priority:high"
-  color      = "d93f0b"
+
+  repository  = github_repository.repo[each.key].name
+  name        = "priority:high"
+  color       = "d93f0b"
   description = "High priority tasks"
-  
+
   depends_on = [github_repository.repo]
 }
 
 # Create initial setup issue for each project
 resource "github_issue" "initial_setup" {
   for_each = { for project_name, project in var.projects : project_name => project }
-  
+
   repository = github_repository.repo[local.project_main_repos[each.key]].name
   title      = "Initial Setup"
-  body       = replace(
+  body = replace(
     replace(
       file("${path.module}/content/initial-setup-issue.md"),
       "{{PROJECT_NAME}}", each.key
     ),
     "{{PROJECT_LEAD}}", each.value.lead
   )
-  
+
   assignees = [each.value.lead]
   labels    = ["setup", "priority:high"]
-  
+
   depends_on = [
     github_repository.repo,
     github_issue_label.setup,
@@ -190,10 +190,10 @@ resource "github_issue" "initial_setup" {
 # Note: Files are created after repository is fully initialized
 resource "github_repository_file" "docs_project" {
   for_each = { for repo in local.all_repos : repo.repo_name => repo }
-  
-  repository     = github_repository.repo[each.key].name
-  file           = "docs/PROJECT.md"
-  content        = replace(
+
+  repository = github_repository.repo[each.key].name
+  file       = "docs/PROJECT.md"
+  content = replace(
     replace(
       file("${path.module}/content/project.md"),
       "{{PROJECT_NAME}}", each.value.project_name
@@ -201,7 +201,7 @@ resource "github_repository_file" "docs_project" {
     "{{PROJECT_LEAD}}", each.value.lead
   )
   commit_message = "Add project documentation"
-  
+
   overwrite_on_create = true
 
   depends_on = [
@@ -209,7 +209,7 @@ resource "github_repository_file" "docs_project" {
     github_team_repository.access,
     github_repository_collaborator.lead
   ]
-  
+
   lifecycle {
     ignore_changes = [content]
   }
@@ -217,15 +217,15 @@ resource "github_repository_file" "docs_project" {
 
 resource "github_repository_file" "docs_team" {
   for_each = { for repo in local.all_repos : repo.repo_name => repo }
-  
-  repository     = github_repository.repo[each.key].name
-  file           = "docs/TEAM.md"
-  content        = replace(
+
+  repository = github_repository.repo[each.key].name
+  file       = "docs/TEAM.md"
+  content = replace(
     file("${path.module}/content/team.md"),
     "{{PROJECT_NAME}}", each.value.project_name
   )
   commit_message = "Add team documentation"
-  
+
   overwrite_on_create = true
 
   depends_on = [
@@ -233,7 +233,7 @@ resource "github_repository_file" "docs_team" {
     github_team_repository.access,
     github_repository_collaborator.lead
   ]
-  
+
   lifecycle {
     ignore_changes = [content]
   }
@@ -242,10 +242,10 @@ resource "github_repository_file" "docs_team" {
 # Create comprehensive README for each repository
 resource "github_repository_file" "readme" {
   for_each = { for repo in local.all_repos : repo.repo_name => repo }
-  
-  repository     = github_repository.repo[each.key].name
-  file           = "README.md"
-  content        = replace(
+
+  repository = github_repository.repo[each.key].name
+  file       = "README.md"
+  content = replace(
     replace(
       replace(
         replace(
@@ -259,15 +259,15 @@ resource "github_repository_file" "readme" {
     "{{REPO_NAME}}", each.key
   )
   commit_message = "Update README with project information"
-  
+
   depends_on = [
     github_repository.repo,
     github_team_repository.access,
     github_repository_collaborator.lead
   ]
-  
-  overwrite_on_create = true  # This will overwrite the auto-generated README
-  
+
+  overwrite_on_create = true # This will overwrite the auto-generated README
+
   lifecycle {
     ignore_changes = [content]
   }
@@ -277,7 +277,7 @@ resource "github_repository_file" "readme" {
 locals {
   # Map project names to their first repository (main repo)
   project_main_repos = {
-    for project_name, project in var.projects : 
+    for project_name, project in var.projects :
     project_name => project.repositories[0].name
   }
 
@@ -285,7 +285,7 @@ locals {
     for project_name, project in var.projects :
     project_name => {
       repository = project.repositories[0].name
-      content    = replace(
+      content = replace(
         replace(
           file("${path.module}/content/wiki.md"),
           "{{PROJECT_NAME}}", project_name
@@ -294,17 +294,17 @@ locals {
       )
     }
   }
-  
+
   # Flatten repos from projects
   all_repos = flatten([
     for project_name, project in var.projects : [
       for repo in project.repositories : {
-        project_name      = project_name
-        repo_name         = repo.name
-        description       = repo.description
-        visibility        = repo.visibility
-        lead              = project.lead
-        team_permission   = project.team_permission
+        project_name    = project_name
+        repo_name       = repo.name
+        description     = repo.description
+        visibility      = repo.visibility
+        lead            = project.lead
+        team_permission = project.team_permission
       }
     ]
   ])

@@ -3,35 +3,35 @@ github_organization = "BKT-DevOps"
 # github_token is set via environment variable: export TF_VAR_github_token="your_github_token"
 
 
-  # "project-alpha" = {  # "project-alpha" takım ismi olacaktır
-  #   lead            = "flovearth" # proje lideri
-  #   team_permission = "push" # takım izni
-  #   repositories = [ # proje repoları
-  #     {
-  #       name              = "to-do-api" # repo ismi
-  #       description       = "API service for Project To-Do" # repo açıklaması
-  #       visibility        = "public" # repo görünürlüğü
-  #     }
-  #   ]
-  #   members = [ # proje üyeleri
-  #     {
-  #       username = "flovearth" # üye GitHub kullanıcı adı
-  #       role     = "maintainer" # üye rolü (maintainer repo yöneticisi, member normal üye)
-  #     },
-  #     {
-  #       username = "hulyaoner" # üye GitHub kullanıcı adı
-  #       role     = "member" # üye rolü (maintainer repo yöneticisi, member normal üye)
-  #     },
-  #     {
-  #       username = "lerkush"
-  #       role     = "member"
-  #     },
-  #     {
-  #       username = "ismailaricioglu"
-  #       role     = "member"
-  #     }  # aynı formatta diğer üyeler eklenebilir 
-  #   ]
-  # }
+# "project-alpha" = {  # "project-alpha" takım ismi olacaktır
+#   lead            = "flovearth" # proje lideri
+#   team_permission = "push" # takım izni
+#   repositories = [ # proje repoları
+#     {
+#       name              = "to-do-api" # repo ismi
+#       description       = "API service for Project To-Do" # repo açıklaması
+#       visibility        = "public" # repo görünürlüğü
+#     }
+#   ]
+#   members = [ # proje üyeleri
+#     {
+#       username = "flovearth" # üye GitHub kullanıcı adı
+#       role     = "maintainer" # üye rolü (maintainer repo yöneticisi, member normal üye)
+#     },
+#     {
+#       username = "hulyaoner" # üye GitHub kullanıcı adı
+#       role     = "member" # üye rolü (maintainer repo yöneticisi, member normal üye)
+#     },
+#     {
+#       username = "lerkush"
+#       role     = "member"
+#     },
+#     {
+#       username = "ismailaricioglu"
+#       role     = "member"
+#     }  # aynı formatta diğer üyeler eklenebilir 
+#   ]
+# }
 
 # Projects Configuration
 projects = {
@@ -40,13 +40,13 @@ projects = {
     team_permission = "push"
     repositories = [
       {
-        name              = "to-do-api"
-        description       = "API service for Project To-Do"
-        visibility        = "public"      },
+        name        = "to-do-api"
+        description = "API service for Project To-Do"
+      visibility = "public" },
       {
-        name              = "to-do-web"
-        description       = "Web interface for Project To-Do"
-        visibility        = "public"
+        name        = "to-do-web"
+        description = "Web interface for Project To-Do"
+        visibility  = "public"
       }
     ]
     members = [
@@ -74,9 +74,9 @@ projects = {
     team_permission = "push"
     repositories = [
       {
-        name              = "communication-service"
-        description       = "Core service for Project Communication"
-        visibility        = "public"
+        name        = "communication-service"
+        description = "Core service for Project Communication"
+        visibility  = "public"
       }
     ]
     members = [
@@ -104,9 +104,9 @@ projects = {
     team_permission = "triage"
     repositories = [
       {
-        name              = "general-docs"
-        description       = "Documentation for Project General Docs"
-        visibility        = "public"
+        name        = "general-docs"
+        description = "Documentation for Project General Docs"
+        visibility  = "public"
       }
     ]
     members = [
@@ -130,9 +130,9 @@ projects = {
     team_permission = "push"
     repositories = [
       {
-        name              = "01-Documentation"
-        description       = "Topluluk için genel dokümantasyon"
-        visibility        = "public"
+        name        = "01-Documentation"
+        description = "Topluluk için genel dokümantasyon"
+        visibility  = "public"
       }
     ]
     members = [
