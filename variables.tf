@@ -15,9 +15,9 @@ variable "projects" {
     lead            = string
     team_permission = string
     repositories = list(object({
-      name              = string
-      description       = string
-      visibility        = string
+      name        = string
+      description = string
+      visibility  = string
     }))
     members = list(object({
       username = string
