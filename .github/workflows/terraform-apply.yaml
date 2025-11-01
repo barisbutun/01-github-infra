@@ -7,6 +7,10 @@ on:
 
 permissions:
   contents: read
+  id-token: write
+
+env:
+  AWS_TF_ROLE_ARN: ${{ vars.AWS_TF_ROLE_ARN }}
 
 jobs:
   terraform-apply:
@@ -21,6 +25,12 @@ jobs:
         uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3.1.2
         with:
           terraform_version: "1.9.7"
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v5
+        with:
+          role-to-assume: ${{ env.AWS_TF_ROLE_ARN }}
+          aws-region: eu-west-2
 
       - name: Terraform Init
         id: init
