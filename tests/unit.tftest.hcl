@@ -18,7 +18,7 @@ variables {
 
 run "check_locals_all_repos_flattening" {
   command = plan
-  
+
   assert {
     condition     = length(local.all_repos) == 2
     error_message = "The length of local.all_repos should have been 2, but it was ${length(local.all_repos)}."
