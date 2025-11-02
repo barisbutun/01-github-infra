@@ -10,8 +10,6 @@ Bu proje, herhangi bir kuruluş için Terraform aracılığıyla GitHub depo alt
 
 Sistem, otomatik GitHub Actions iş akışları aracılığıyla uygun güvenlik kontrolleri, dal koruma kuralları ve kullanıcı erişim yönetimi ile birden fazla ekip depolama alanı oluşturur ve yapılandırır.
 
-Translated with DeepL.com (free version)
-
 # Manage GitHub Repositories via Terraform and GitHub Actions Workflow
 
 This project manages GitHub repositories infrastructure via Terraform for any organization, designed to **streamline any organization** and **eliminate setup complexity**. 
