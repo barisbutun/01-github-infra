@@ -1,5 +1,5 @@
 
-<details open>
+<details>
 <summary><strong>🇹🇷 Türkçe</strong></summary>
 
 <br>
@@ -532,7 +532,7 @@ terraform destroy
 
 
 </details>
-</details>
+
 ## Security Considerations
 
 1. **Token Security**: Never commit GitHub tokens to version control
