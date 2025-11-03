@@ -1,74 +1,146 @@
-# ${project_name} Team
+# {{PROJECT_NAME}} Proje Takımı | Project Team
 
-## Team Members
+<details open>
+<summary><strong>🇹🇷 Türkçe</strong></summary>
+
+<br>
+
+Bu sayfada **{{PROJECT_NAME}}** projesinin ekibi, rolleri ve uzmanlık alanları hakkında güncel bilgiler bulunmaktadır.
+
+## 👤 Proje Lideri
+
+**@{{PROJECT_LEAD}}** - Projenin lideri ve nihai karar mercii.
+
+## 📊 Takım İstatistikleri
+
+*   **Toplam Üye:** {{MEMBER_COUNT}}
+*   **Maintainer:** {{MAINTAINER_COUNT}}
+*   **Member:** {{REGULAR_MEMBER_COUNT}}
+
+## 👥 Güncel Takım Listesi
+
+Dinamik ve güncel takım listesi için GitHub takım sayfasını ziyaret edin:
+
+➡️ **[Takım Sayfası](https://github.com/orgs/{{GITHUB_ORG}}/teams/{{PROJECT_NAME}})**
+
+---
+
+## Takım Üyeleri Tablosu
+
+Aşağıdaki tablo manuel olarak güncellenebilir:
+
+| Rol | Kıdem | Teknoloji | Notlar | Durum |
+|-----|-------|-----------|--------|-------|
+|     |       |           |        |       |
+
+</details>
+
+<details>
+<summary><strong>🇬🇧 English</strong></summary>
+
+<br>
+
+This page contains up-to-date information about the **{{PROJECT_NAME}}** project team, their roles, and areas of expertise.
+
+## 👤 Project Lead
+
+**@{{PROJECT_LEAD}}** - The leader of this project and final decision maker.
+
+## 📊 Team Statistics
+
+*   **Total Members:** {{MEMBER_COUNT}}
+*   **Maintainers:** {{MAINTAINER_COUNT}}
+*   **Members:** {{REGULAR_MEMBER_COUNT}}
+
+## 👥 Current Team List
+
+Visit the GitHub team page for a dynamic and up-to-date team list:
+
+➡️ **[Team Page](https://github.com/orgs/{{GITHUB_ORG}}/teams/{{PROJECT_NAME}})**
+
+---
+
+## Team Members Table
+
+The table below can be updated manually:
 
 | Role | Seniority | Tech Stack | Notes | Status |
 |------|-----------|------------|-------|--------|
 |      |           |            |       |        |
-|      |           |            |       |        |
-|      |           |            |       |        |
-|      |           |            |       |        |
-|      |           |            |       |        |
 
-## Role Definitions
-
-### Project Lead
-- Overall project responsibility
-- Technical decision making
-- Team coordination
-- Stakeholder communication
-
-### Senior Developer
-- Technical leadership
-- Architecture decisions
-- Code review and mentoring
-- Complex feature development
-
-### Developer
-- Feature development
-- Bug fixes
-- Code review participation
-- Documentation updates
-
-### Junior Developer
-- Learning and development
-- Simple feature implementation
-- Bug fixes under guidance
-- Documentation maintenance
-
-## Seniority Levels
-
-- **Senior (5+ years)**: Independent work, mentoring others, architectural decisions
-- **Mid (2-5 years)**: Independent feature development, some mentoring
-- **Junior (0-2 years)**: Learning, guided development, growing skills
-
-## Tech Stack Categories
-
-Common technology areas for this project:
-
-- **Frontend**: React, Vue, Angular, HTML/CSS, JavaScript/TypeScript
-- **Backend**: Node.js, Python, Java, Go, PHP, .NET
-- **Database**: PostgreSQL, MySQL, MongoDB, Redis
-- **DevOps**: Docker, Kubernetes, AWS, Azure, GCP
-- **Mobile**: React Native, Flutter, iOS, Android
-- **Other**: Specify other relevant technologies
-
-## Status Options
-
-- **Active**: Currently working on the project
-- **On Leave**: Temporarily away from the project
-- **Alumni**: Former team member
-- **Consultant**: External contributor
-
-## Notes
-
-Use the Notes column for:
-- Specific areas of expertise
-- Availability constraints
-- Special responsibilities
-- Contact preferences
-- Time zone information
+</details>
 
 ---
 
-*Update this table as team composition changes*
+## 📜 Rol Tanımları | Role Definitions
+
+<details open>
+<summary><strong>🇹🇷 Türkçe</strong></summary>
+
+### 👑 Proje Lideri (Project Lead)
+- Projenin genel sorumluluğu
+- Teknik karar alma
+- Takım koordinasyonu
+- Repository üzerinde `admin` yetkisi
+
+### 🔧 Takım Sorumlusu (Maintainer)
+- Teknik liderlik ve mimari kararlar
+- Kod inceleme ve mentorluk
+- PR onaylama yetkisi
+- `Write` erişimi
+
+### 👥 Üye (Member)
+- Fonksiyonel geliştirme ve hata düzeltme
+- Kod incelemelerine katılım
+- PR açma ve inceleme
+- `Write` erişimi
+
+### 🌱 Junior Geliştirici (Junior Developer)
+- Rehberlik altında basit geliştirmeler
+- Hata düzeltmeleri
+- Öğrenme ve kendini geliştirme
+
+</details>
+
+<details>
+<summary><strong>🇬🇧 English</strong></summary>
+
+### 👑 Project Lead
+- Overall project responsibility
+- Technical decision making
+- Team coordination
+- `Admin` access on repository
+
+### 🔧 Maintainer
+- Technical leadership and architectural decisions
+- Code review and mentoring
+- PR approval authority
+- `Write` access
+
+### 👥 Member
+- Feature development and bug fixes
+- Code review participation
+- Opening and reviewing PRs
+- `Write` access
+
+### 🌱 Junior Developer
+- Simple developments under guidance
+- Bug fixes
+- Learning and self-improvement
+
+</details>
+
+---
+
+## 🎯 Kıdem Seviyeleri | Seniority Levels
+
+- **Senior (5+ yıl | years):** Bağımsız çalışma, mentorluk, mimari kararlar
+- **Mid (2-5 yıl | years):** Bağımsız özellik geliştirme
+- **Junior (0-2 yıl | years):** Rehberlikle öğrenme ve gelişme
+
+---
+
+<p align="center">
+<i>Bu sayfa Terraform tarafından otomatik oluşturulmuştur<br>
+This page was automatically generated by Terraform</i>
+</p>

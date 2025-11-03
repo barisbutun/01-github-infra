@@ -215,25 +215,46 @@ resource "github_repository_file" "docs_project" {
   }
 }
 
-resource "github_repository_file" "docs_team" {
+# Team sayfası için dinamik içerik
+resource "github_repository_file" "team" {
   for_each = { for repo in local.all_repos : repo.repo_name => repo }
 
   repository = github_repository.repo[each.key].name
-  file       = "sample_repo_docs/TEAM.md"
+  file       = "docs/TEAM.md"
+  
   content = replace(
-    file("${path.module}/sample_repo_docs/TEAM.md"),
-    "{{PROJECT_NAME}}", each.value.project_name
+    replace(
+      replace(
+        replace(
+          replace(
+            replace(
+              file("${path.module}/sample_repo_docs/team.md"),
+              "{{PROJECT_NAME}}", each.value.project_name
+            ),
+            "{{GITHUB_ORG}}", var.github_organization
+          ),
+          "{{PROJECT_LEAD}}", each.value.lead
+        ),
+        "{{MEMBER_COUNT}}", tostring(length(var.projects[each.value.project_name].members))
+      ),
+      "{{MAINTAINER_COUNT}}", tostring(length([
+        for m in var.projects[each.value.project_name].members : m if m.role == "maintainer"
+      ]))
+    ),
+    "{{REGULAR_MEMBER_COUNT}}", tostring(length([
+      for m in var.projects[each.value.project_name].members : m if m.role == "member"
+    ]))
   )
-  commit_message = "Add team documentation"
-
+  
+  commit_message      = "Add team documentation"
   overwrite_on_create = true
-
+  
   depends_on = [
     github_repository.repo,
     github_team_repository.access,
     github_repository_collaborator.lead
   ]
-
+  
   lifecycle {
     ignore_changes = [content]
   }
