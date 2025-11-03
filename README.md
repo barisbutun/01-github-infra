@@ -504,7 +504,6 @@ Bu projeyi kullanarak kendi GitHub organizasyonunuzu yönetmeye başlamak için 
     ```bash
     terraform apply
     ```
-   <details>
 <summary>🚨 <strong>Tehlike Bölgesi (Danger Zone)</strong></summary>
 
 <p>Aşağıdaki komut, bu Terraform konfigürasyonu tarafından yönetilen <strong>tüm kaynakları kalıcı olarak yok edecektir.</strong> Bu, GitHub organizasyonunuzdaki repoları, takımları ve üyelikleri sileceği anlamına gelir.</p>
@@ -518,7 +517,6 @@ Bu projeyi kullanarak kendi GitHub organizasyonunuzu yönetmeye başlamak için 
 # DİKKAT: Bu komut, yönetilen tüm kaynakları kalıcı olarak silecektir.
 terraform destroy
 ```
-</details>
 
 <details>
 <summary><strong>Çözümleme (Troubleshooting)</strong></summary>
@@ -529,7 +527,6 @@ terraform destroy
 2. **User Not Found**: Verify all usernames exist on GitHub
 3. **Repository Exists**: Repository names must be unique in the organization
 4. **Team Name Conflicts**: Team names must be unique in the organization
-
 
 </details>
 
