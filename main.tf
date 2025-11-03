@@ -109,7 +109,7 @@ resource "github_branch_protection" "main" {
 
   depends_on = [
     github_repository_file.docs_project,
-    github_repository_file.docs_team,
+    github_repository_file.team,
     github_repository_file.readme,
     github_repository_file.codeowners
   ]
