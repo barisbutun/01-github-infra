@@ -447,15 +447,6 @@ projects = {
 ```
 </details>
 
-## Troubleshooting
-
-### Common Issues
-
-1. **Permission Denied**: Ensure your GitHub token has `admin:org` scope
-2. **User Not Found**: Verify all usernames exist on GitHub
-3. **Repository Exists**: Repository names must be unique in the organization
-4. **Team Name Conflicts**: Team names must be unique in the organization
-
 <details>
 <summary><strong>Hızlı Başlangıç</strong></summary>
 <br>
@@ -529,6 +520,18 @@ terraform destroy
 ```
 </details>
 
+<details>
+<summary><strong>Çözümleme (Troubleshooting)</strong></summary>
+
+### Common Issues
+
+1. **Permission Denied**: Ensure your GitHub token has `admin:org` scope
+2. **User Not Found**: Verify all usernames exist on GitHub
+3. **Repository Exists**: Repository names must be unique in the organization
+4. **Team Name Conflicts**: Team names must be unique in the organization
+
+
+</details>
 </details>
 ## Security Considerations
 
