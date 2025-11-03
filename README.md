@@ -517,7 +517,7 @@ Bu projeyi kullanarak kendi GitHub organizasyonunuzu yönetmeye başlamak için 
 # DİKKAT: Bu komut, yönetilen tüm kaynakları kalıcı olarak silecektir.
 terraform destroy
 ```
-
+</details>
 <details>
 <summary><strong>Çözümleme (Troubleshooting)</strong></summary>
 
