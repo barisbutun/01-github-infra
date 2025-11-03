@@ -247,7 +247,6 @@ PR açabilir ve issue oluşturabilirsiniz.
 
 Bu proje MIT Lisansı ile lisanslanmıştır - detaylar için LICENSE dosyasına bakınız.
 </details>
----
 <details>
 <summary><strong>🇬🇧 English</strong></summary>
 
@@ -529,6 +528,8 @@ terraform destroy
 4. **Team Name Conflicts**: Team names must be unique in the organization
 
 </details>
+<details>
+<summary><strong>Güvenlik Dikkatleri (Security Considerations)</strong></summary>
 
 ## Security Considerations
 
@@ -537,10 +538,13 @@ terraform destroy
 3. **Access Control**: Regularly review team memberships and permissions
 4. **Audit Logging**: Monitor GitHub audit logs for unauthorized changes
 
-## Contributing
+</details>
+<details>
+<summary><strong>Katkıda Bulunma (Contributing)</strong></summary>
 
 Please feel free to raise a PR and create issue.
-
-## License
+</details>
+<details>
+<summary><strong>Lisans (License)</strong></summary>
 
 This project is licensed under the MIT License - see the LICENSE file for details.
