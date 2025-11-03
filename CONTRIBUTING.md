@@ -1,5 +1,5 @@
 # Katkıda Bulunma Rehberi | Contributing Guide
-<details open>
+<details>
 <summary><strong>🇹🇷 Türkçe</strong></summary>
 
 ## Katkıda Bulunma
