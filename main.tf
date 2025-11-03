@@ -219,9 +219,9 @@ resource "github_repository_file" "docs_team" {
   for_each = { for repo in local.all_repos : repo.repo_name => repo }
 
   repository = github_repository.repo[each.key].name
-  file       = "docs/TEAM.md"
+  file       = "sample_repo_docs/TEAM.md"
   content = replace(
-    file("${path.module}/content/team.md"),
+    file("${path.module}/sample_repo_docs/TEAM.md"),
     "{{PROJECT_NAME}}", each.value.project_name
   )
   commit_message = "Add team documentation"
@@ -287,7 +287,7 @@ locals {
       repository = project.repositories[0].name
       content = replace(
         replace(
-          file("${path.module}/content/wiki.md"),
+          file("${path.module}/sample_repo_docs/wiki.md"),
           "{{PROJECT_NAME}}", project_name
         ),
         "{{PROJECT_LEAD}}", project.lead
