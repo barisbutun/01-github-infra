@@ -1,8 +1,11 @@
 
+<img width="1536" height="1024" alt="team_logo" src="https://github.com/user-attachments/assets/f59340f1-9ecd-4ead-9091-bc853bc50924" />
+
 <details open>
 <summary><strong>🇹🇷 Türkçe</strong></summary>
 
 <br>
+
 
 # GitHub Organizasyonları için Terraform ile Repo, Takım ve Kullanıcı Yönetimi Projesi
 
