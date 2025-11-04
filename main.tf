@@ -231,6 +231,9 @@ resource "github_repository_file" "docs_architecture" {
     github_team_repository.access,
     github_repository_collaborator.lead
   ]
+  lifecycle {
+    ignore_changes = [content]
+  }
 }
 
 # Development Workflow dokümanı
